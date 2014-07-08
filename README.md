@@ -1,7 +1,7 @@
 MetaMerge
 =========
 
-This module augments SAML20-SP matadata that have been fetched by MetaRefresh. Elements are added either based on entityId or on [entity category] (http://macedir.org/entity-category). If specified by entity category fields in the metadata dominate otherwise the template fields overwrite fields in the imported metadata.
+This add on module for [SimpleSAMLphp](https://simplesamlphp.org) augments SAML20-SP matadata that have been fetched by MetaRefresh. Elements are added either based on entityId or on [entity category] (http://macedir.org/entity-category). If specified by entity category fields in the metadata dominate otherwise the template fields overwrite fields in the imported metadata.
 
 Superfluous metadata elements can be stripped to save space.
 
