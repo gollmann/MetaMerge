@@ -16,6 +16,8 @@ $defaultTemplate = array (
    ),
 );
 
+// Service Provider
+
 $template['https://skriptenforum.net/shibboleth'] = array (
   'AttributeNameFormat' => 'urn:oasis:names:tc:SAML:2.0:attrname-format:uri',
   'attributes' => array('eduPersonScopedAffiliation'),
@@ -26,6 +28,7 @@ $template['https://skriptenforum.net/shibboleth'] = array (
 );
 
 // Service Categories
+
 $template['http://refeds.org/category/research-and-scholarship'] = array (
   'AttributeNameFormat' => 'urn:oasis:names:tc:SAML:2.0:attrname-format:uri',
    // default attributes: mail, eduPersonPrincipalName, displayName
