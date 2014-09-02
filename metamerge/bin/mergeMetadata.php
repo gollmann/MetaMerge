@@ -50,7 +50,16 @@ foreach($metadata as $url => $mdata) {
 	foreach($currentTemplate as $field => $value) {
 		if($templateWins || !isset($mdata[$field])) $mdata[$field] = $value;
 	}
-	
+
+	if(isset($mdata['attributes.required'])) {
+		$checked = array_intersect($mdata['attributes.required'], $mdata['attributes']);
+		if (empty($checked)) {
+			unset($mdata['attributes.required']);
+		} else {
+			$mdata['attributes.required'] = $checked;
+		}
+	}
+
 	// output
 	if(!@fwrite($fh, "\n\$metadata['$url'] = ".var_export($mdata, true).";\n")) {
 		echo("cannot write to output file\n");
