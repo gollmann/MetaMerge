@@ -33,6 +33,16 @@ if(!($fh = @fopen(SIMPLESAMLPATH.'/metadata-generated/saml20-sp-merged.php', 'w'
 foreach($metadata as $url => $mdata) {
 	foreach($fieldsToStrip as $field) unset($mdata[$field]);
 
+//	map "attributes" and "attributes.required" from OIDs to friendly names
+// 	$mapper = new sspmod_core_Auth_Process_AttributeMap('oid2name');
+// 	foreach(['attributes', 'attributes.required'] as $field) {
+// 		if(isset($mdata[$field]) {
+// 			$tmp = array('Attributes' => $mdata[$field]);
+// 			$mapper->process(&$tmp);
+// 			$mdata[$field] = $tmp'Attributes'];
+// 		}
+// 	}
+
 	$templateWins = true;
 	if(isset($template[$url])) $currentTemplate = $template[$url];
 	else $currentTemplate = NULL;
