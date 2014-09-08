@@ -55,21 +55,12 @@ foreach($metadata as $url => $mdata) {
 		$mdata['attributes'] = array_intersect($mdata['attributes'], $mdata['attributes.allowed']);
 		unset($mdata['attributes.allowed']);
 	}
-	if(isset($mdata['attributes.allowed.ifRequired'])) {
+	if(isset($mdata['attributes.required']) && isset($mdata['attributes.allowed.ifRequired'])) {
 		$allowed = array_intersect($mdata['attributes.required'], $mdata['attributes.allowed.ifRequired']);
 		$mdata['attributes'] = $mdata['attributes'] + $allowed;
-		unset($mdata['attributes.allowed.ifRequired']);
-		unset($mdata['attributes.required']);
 	}
-
-	if(isset($mdata['attributes.required'])) {
-		$checked = array_intersect($mdata['attributes.required'], $mdata['attributes']);
-		if (empty($checked)) {
-			unset($mdata['attributes.required']);
-		} else {
-			$mdata['attributes.required'] = $checked;
-		}
-	}
+	unset($mdata['attributes.allowed.ifRequired']);
+	unset($mdata['attributes.required']);
 
 	// output
 	if(!@fwrite($fh, "\n\$metadata['$url'] = ".var_export($mdata, true).";\n")) {
