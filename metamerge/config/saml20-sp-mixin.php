@@ -47,7 +47,7 @@ $template['http://refeds.org/category/research-and-scholarship'] = array (
 $template['http://www.geant.net/uri/dataprotection-code-of-conduct/v1'] = array (
   'AttributeNameFormat' => 'urn:oasis:names:tc:SAML:2.0:attrname-format:uri',
   'attributes' => array('none'),
-  'attributes.allowed' => array('mail', 'sn', 'givenName', 'eduPersonScopedAffiliation', 'eduPersonPrincipalName', 'displayName', 'eduPersonTargetedID'),
+  'attributes.allowed' => array('mail', 'sn', 'givenName', 'eduPersonScopedAffiliation', 'eduPersonPrincipalName', 'displayName', 'eduPersonTargetedID', 'schacHomeOrganization'),
   'authproc' => array(
 	15 => array('class' => 'core:AttributeMap', 'mail' => array('mail', 'eduPersonPrincipalName')),
 	16 => array(
