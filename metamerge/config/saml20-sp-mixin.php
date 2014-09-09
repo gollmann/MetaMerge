@@ -31,8 +31,8 @@ $template['https://skriptenforum.net/shibboleth'] = array (
 
 $template['http://refeds.org/category/research-and-scholarship'] = array (
   'AttributeNameFormat' => 'urn:oasis:names:tc:SAML:2.0:attrname-format:uri',
-   // default attributes: mail, eduPersonPrincipalName, displayName
-  'attributes' => array('urn:oid:0.9.2342.19200300.100.1.3', 'urn:oid:1.3.6.1.4.1.5923.1.1.1.6', 'urn:oid:2.16.840.1.113730.3.1.241'),
+   // following attributes are default values
+  'attributes' => array('mail', 'eduPersonPrincipalName', 'displayName'),
   'authproc' => array(
 	10 => array('class' => 'core:AttributeLimit', 'mail', 'sn', 'givenName', 'eduPersonScopedAffiliation'),
 	15 => array('class' => 'core:AttributeMap', 'mail' => array('mail', 'eduPersonPrincipalName')),
@@ -41,8 +41,6 @@ $template['http://refeds.org/category/research-and-scholarship'] = array (
 	  'code' => '$attributes["displayName"] = array($attributes["givenName"][0] . " " . $attributes["sn"][0]);',
 	),
 	17 => array('class' => 'core:TargetedID'),
-	20 => array('class' => 'core:AttributeMap', 'name2oid'), // map for attribute filter
-	85 => array('class' => 'core:AttributeMap', 'oid2name'), // map for consent display
   ),
 );
 
@@ -58,8 +56,6 @@ $template['http://www.geant.net/uri/dataprotection-code-of-conduct/v1'] = array 
 	),
 	17 => array('class' => 'core:TargetedID'),
 	18 => array('class' => 'core:AttributeAdd','schacHomeOrganization' => 'tuwien.ac.at'),
-	20 => array('class' => 'core:AttributeMap', 'name2oid'), // map for attribute filter
-	85 => array('class' => 'core:AttributeMap', 'oid2name'), // map for consent display
   ),
 );
 
