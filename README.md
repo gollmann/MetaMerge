@@ -7,14 +7,14 @@ Superfluous metadata elements can be stripped to save space.
 
 Merged metadata are written to *metadata-generated/saml20-sp-merged.php*. After a plausibility check they are moved to the destination specified in the configuration.
 
-Configuration files are located in the *metamerge/config* directory:
+**Configuration files** are located in the *metamerge/config* directory:
 
 + *config.php* specifies the metadata source, its fingerprint and the path of the merged data relative to the metadata directory.
 + *saml20-sp-mixin.php* specifies the transformation process:
 	+ *fieldsToStrip* is an array of element names to remove.
 	+ *defaultTemplate* is used for entities that have no match in the template array.
 	+ *template* is an array of templates indexed by entityId or entity category.
-
-**Hint:**  Category templates should specify the permissible attributes with a *core:AttributeLimit* filter to avoid unwanted attribute releases.
+	+ *attributes.allowed* restricts the set of attributes that may be released. For use in category templates to avoid unwanted attribute releases.
+	+ *attributes.allowed.ifRequired* lists attributes that may only be released if they are marked as required. For use in category templates to avoid unwanted attribute releases.
 
 **Usage:** Enable the MetaRefresh module and call *metamerge/bin/fetchFederationMetadata.php* in a cron job.
