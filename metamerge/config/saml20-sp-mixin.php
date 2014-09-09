@@ -33,8 +33,8 @@ $template['http://refeds.org/category/research-and-scholarship'] = array (
   'AttributeNameFormat' => 'urn:oasis:names:tc:SAML:2.0:attrname-format:uri',
    // following attributes are default values
   'attributes' => array('mail', 'eduPersonPrincipalName', 'displayName'),
+  'attributes.allowed' => array('mail', 'sn', 'givenName', 'eduPersonScopedAffiliation', 'eduPersonPrincipalName', 'displayName', 'eduPersonTargetedID'),
   'authproc' => array(
-	10 => array('class' => 'core:AttributeLimit', 'mail', 'sn', 'givenName', 'eduPersonScopedAffiliation'),
 	15 => array('class' => 'core:AttributeMap', 'mail' => array('mail', 'eduPersonPrincipalName')),
 	16 => array(
 	  'class' => 'core:PHP',
@@ -47,8 +47,8 @@ $template['http://refeds.org/category/research-and-scholarship'] = array (
 $template['http://www.geant.net/uri/dataprotection-code-of-conduct/v1'] = array (
   'AttributeNameFormat' => 'urn:oasis:names:tc:SAML:2.0:attrname-format:uri',
   'attributes' => array('none'),
+  'attributes.allowed' => array('mail', 'sn', 'givenName', 'eduPersonScopedAffiliation', 'eduPersonPrincipalName', 'displayName', 'eduPersonTargetedID'),
   'authproc' => array(
-	10 => array('class' => 'core:AttributeLimit', 'mail', 'sn', 'givenName', 'eduPersonScopedAffiliation'),
 	15 => array('class' => 'core:AttributeMap', 'mail' => array('mail', 'eduPersonPrincipalName')),
 	16 => array(
 	  'class' => 'core:PHP',
