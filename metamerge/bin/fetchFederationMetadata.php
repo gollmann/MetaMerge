@@ -27,5 +27,3 @@ if ($exitCode != 0) {
 
 rename(BASEPATH.'/metadata-generated/saml20-sp-merged.php', BASEPATH.'/metadata/'.$destination);
 exit(0);
-
-?>
