@@ -36,7 +36,7 @@ foreach($metadata as $url => $mdata) {
 
 // 	map "attributes" and "attributes.required" from OIDs to friendly names
  	$am_config = ['oid2name'];
- 	$mapper = new sspmod_core_Auth_Process_AttributeMap($am_config, NULL);
+ 	$mapper = new \SimpleSAML\Module\core\Auth\Process\AttributeMap($am_config, NULL);
  	foreach(['attributes', 'attributes.required'] as $field) {
  		if(isset($mdata[$field])) {
  			$tmp = array('Attributes' => array_fill_keys($mdata[$field], 0));
