@@ -88,5 +88,3 @@ if(!@fclose($fh)) {
 }
 
 exit(0);
-
-?>

@@ -44,5 +44,3 @@ foreach($metadata as $k => $m) {
 }
 
 exit(0);
-
-?>

@@ -58,5 +58,3 @@ $template['http://www.geant.net/uri/dataprotection-code-of-conduct/v1'] = array 
 	18 => array('class' => 'core:AttributeAdd','schacHomeOrganization' => 'tuwien.ac.at'),
   ),
 );
-
-?>
