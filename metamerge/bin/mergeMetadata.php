@@ -35,7 +35,8 @@ foreach($metadata as $url => $mdata) {
 	foreach($fieldsToStrip as $field) unset($mdata[$field]);
 
 // 	map "attributes" and "attributes.required" from OIDs to friendly names
- 	$mapper = new sspmod_core_Auth_Process_AttributeMap(array('oid2name'), NULL);
+ 	$am_config = ['oid2name'];
+ 	$mapper = new sspmod_core_Auth_Process_AttributeMap($am_config, NULL);
  	foreach(['attributes', 'attributes.required'] as $field) {
  		if(isset($mdata[$field])) {
  			$tmp = array('Attributes' => array_fill_keys($mdata[$field], 0));
