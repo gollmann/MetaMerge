@@ -39,7 +39,7 @@ foreach($metadata as $url => $mdata) {
  	$mapper = new \SimpleSAML\Module\core\Auth\Process\AttributeMap($am_config, NULL);
  	foreach(['attributes', 'attributes.required'] as $field) {
  		if(isset($mdata[$field])) {
- 			$tmp = array('Attributes' => array_fill_keys($mdata[$field], 0));
+ 			$tmp = ['Attributes' => array_fill_keys($mdata[$field], 0)];
  			$mapper->process($tmp);
  			$mdata[$field] = array_keys($tmp['Attributes']);
  		}
